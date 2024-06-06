@@ -57,7 +57,7 @@ jobs:
       build-and-push-docker-image-wasm: true
       # if the test fails, we upload logs so that we can download them from the UI.
       upload-logs: true
-      chain-image: ghcr.io/cosmos/ibc-go-wasm-simd
+      chain-image: ghcr.io/gjermundgaraba/ibc-go-wasm-simd
       # with regular tests, both images are the same.
       chain-a-tag: '${{ needs.determine-image-tag.outputs.simd-tag }}'
       chain-b-tag: '${{ needs.determine-image-tag.outputs.simd-tag }}'

@@ -20,7 +20,7 @@ on:
         description: 'The image to use for chains'
         required: true
         type: string
-        default: 'ghcr.io/cosmos/ibc-go-simd'
+        default: 'ghcr.io/gjermundgaraba/ibc-go-simd'
       chain-a-tag:
         description: 'The tag to use for chain A'
         required: true
@@ -123,7 +123,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
         with:
-          images: ${{ env.REGISTRY }}/cosmos/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/gjermundgaraba/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
         if: ${{ inputs.build-and-push-docker-image }}
@@ -170,7 +170,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
         with:
-          images: ${{ env.REGISTRY }}/cosmos/${{ env.IMAGE_NAME_WASM }}
+          images: ${{ env.REGISTRY }}/gjermundgaraba/${{ env.IMAGE_NAME_WASM }}
 
       - name: Build and push Docker image
         if: ${{ inputs.build-and-push-docker-image-wasm }}
@@ -197,7 +197,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: cosmos/ibc-go
+          repository: gjermundgaraba/ibc-go
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
@@ -235,7 +235,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: cosmos/ibc-go
+          repository: gjermundgaraba/ibc-go
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
